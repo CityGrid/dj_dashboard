@@ -5,7 +5,8 @@ module Delayed
         alias_method :old_enqueue, :enqueue
         def enqueue(*args)
           job = old_enqueue(*args)
-          job.update_attributes(job_name: job.name) if job.is_a? Delayed::Backend::ActiveRecord::Job
+          # the update_attributes(job_name: job.name) syntax doesn't work
+          job.update_attribute(:job_name, job.name) if job.is_a? Delayed::Backend::ActiveRecord::Job
           job
         end
 

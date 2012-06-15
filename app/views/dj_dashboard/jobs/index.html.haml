@@ -8,7 +8,7 @@
       %td.header Retrying
       %td.header.right Failed
       - @jobs.each.with_index do |job, index|
-        %tr{ :id => "job_#{job[:name].gsub('::','__')}", :class => "#{index % 2 === 0 ? 'striped' : ''}" }
+        %tr{ :id => "job_#{DjDashboard::Job.dom_id(job[:name])}", :class => "#{index % 2 === 0 ? 'striped' : ''}" }
           %td.col.all.left= link_to job[:name], dj_dashboard_job_stats_path(:job_name => job[:name], :type => :all), :remote => true
           %td.col.running= link_to_if (job[:running] > 0), number_with_delimiter(job[:running]), dj_dashboard_job_stats_path(:job_name => job[:name], :type => :running), :remote => true
           %td.col.pending= link_to_if (job[:pending] > 0), number_with_delimiter(job[:pending]), dj_dashboard_job_stats_path(:job_name => job[:name], :type => :pending), :remote => true

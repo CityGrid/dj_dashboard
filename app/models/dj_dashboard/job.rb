@@ -14,5 +14,9 @@ module DjDashboard
         }
       end
     end
+    
+    def self.dom_id name
+      name.gsub('::', '__').gsub('#','-')
+    end
   end
 end

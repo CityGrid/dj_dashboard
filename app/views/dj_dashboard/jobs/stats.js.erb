@@ -1,6 +1,6 @@
-var job = $('#job_<%= @job_name.gsub('::', '__') %>')
-var stats = $('#stats_<%= @job_name.gsub('::', '__') %>')
-var stats_type = $('#stats_<%= @job_name.gsub('::', '__') %>.stats.<%= @stat_type.to_s %>')
+var job = $('#job_<%= @job_name %>')
+var stats = $('#stats_<%= @job_name %>')
+var stats_type = $('#stats_<%= @job_name %>.stats.<%= @stat_type.to_s %>')
 
 stats.remove();
 if(stats_type.size() === 0 || <%= @is_pagination_link %>) {

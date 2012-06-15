@@ -5,7 +5,7 @@ gemspec
 gem "rails", "3.0.11"
 gem "capybara", ">= 0.4.0"
 gem "sqlite3"
-gem 'delayed_job', "~> 2.0"
+gem 'delayed_job', "~> 3.0"
 gem 'haml'
 
 # To use debugger (ruby-debug for Ruby 1.8.7+, ruby-debug19 for Ruby 1.9.2+)
